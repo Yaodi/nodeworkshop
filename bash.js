@@ -10,6 +10,7 @@ process.stdin.on("data", data => {
   } else if (cmd === "ls") {
     ls();
   } else if (cmd.startsWith("cat")) {
-    cat(cmd.slice(4));
+    let fileNames = cmd.slice(4).split(" ");
+    cat(fileNames);
   }
 });
